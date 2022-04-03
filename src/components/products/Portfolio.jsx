@@ -16,7 +16,7 @@ export const Portfolio = (props) => {
           setShow={props.setShow}
           title="ポートフォリオサイト"
           content="製作物紹介サイト：React.js で作成 デプロイ githubページ"
-          link="#"
+          link="https://my-portfolio-umber-psi.vercel.app/"
           image={portfolioImage}
         />
       )}
