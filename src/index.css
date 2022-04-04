@@ -185,3 +185,43 @@ p {
 .footer {
   text-align: center;
 }
+
+
+@media screen and (max-width: 1024px) {
+  .headerTitle{
+    font-size:1.6em
+  }
+  .mainContents{
+    width:800px;
+    margin:0 auto;
+  }
+  .productPage{
+    flex-wrap:wrap;
+  }
+  .productContent{
+    width: 46%;
+    height:auto;
+    margin:10px 2% 20px;
+  }
+  .footer{
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 865px) {
+  .mainContents{
+    width:700px;
+    height:67%;
+  }
+  .productImage{
+    background-size: cover;
+    height:80%;
+  }
+
+}
+
+
+@media screen and (max-width: 728px) {
+  
+}
