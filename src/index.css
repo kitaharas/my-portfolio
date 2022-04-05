@@ -145,83 +145,367 @@ p {
   width: 100%;
 }
 
-.modalLinkGroup{
+.modalLinkGroup {
   display: flex;
-  justify-content:center;
+  justify-content: center;
 }
 
-.linkUrl{
-  display:block;
-  color:black;
+.linkUrl {
+  display: block;
+  color: black;
   font-size: 1.3rem;
   width: fit-content;
   text-decoration: underline;
-  margin-right:3%;
+  margin-right: 3%;
 }
 
-.gitLinkUrl{
-  display:block;
-  color:black;
+.gitLinkUrl {
+  display: block;
+  color: black;
   font-size: 1.3rem;
   width: fit-content;
   text-decoration: underline;
 }
 
-.appliArticle{
+.appliArticle {
   white-space: pre-line;
 }
 
-.closeBtn{
+.closeBtn {
   margin: 10px auto 5px;
   display: block;
   line-height: 55px;
   border: none;
-  width:160px;
-  border-radius:9999px;
+  width: 160px;
+  border-radius: 9999px;
   font-size: 1.2rem;
 }
 
-
 .footer {
   text-align: center;
+  margin-top: 30px;
 }
 
-
-@media screen and (max-width: 1024px) {
-  .headerTitle{
-    font-size:1.6em
+@media screen and (max-width: 1082px) {
+  .closeBtn {
+    line-height: 48px;
+    width: 130px;
+    font-size: 1.1rem;
   }
-  .mainContents{
-    width:800px;
-    margin:0 auto;
+  .headerTitle {
+    font-size: 1.6em;
   }
-  .productPage{
-    flex-wrap:wrap;
+  .mainContents {
+    width: 800px;
+    margin: 0 auto;
   }
-  .productContent{
+  .productPage {
+    flex-wrap: wrap;
+  }
+  .productContent {
     width: 46%;
-    height:auto;
-    margin:10px 2% 20px;
+    height: auto;
+    margin: 10px 2% 20px;
   }
-  .footer{
-    display: none;
+
+  .modalLinkGroup {
+    flex-direction: column;
+    align-items: center;
   }
 }
-
 
 @media screen and (max-width: 865px) {
-  .mainContents{
-    width:700px;
-    height:67%;
+  .mainContents {
+    width: 700px;
+    height: 67%;
   }
-  .productImage{
+  .productImage {
     background-size: cover;
-    height:80%;
+    height: 80%;
   }
-
+  .modalContent {
+    width: 54%;
+  }
+  .linkUrl,
+  .gitLinkUrl {
+    font-size: 1.2rem;
+  }
 }
 
-
 @media screen and (max-width: 728px) {
-  
+  .headerRight {
+    padding-right: 2%;
+  }
+  .headerRight > a {
+    font-size: 0.8rem;
+  }
+  .container {
+    height: 100%;
+  }
+  .headerTitle {
+    font-size: 1.3em;
+  }
+  .mainContents {
+    width: 500px;
+  }
+  .productContent {
+    width: 100%;
+    height: 300px;
+  }
+  .productContent > p {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .linkUrl {
+    font-size: 1.1rem;
+  }
+  .gitLinkUrl {
+    font-size: 1.1rem;
+  }
+  .modalContent {
+    width: 60%;
+  }
+  .closeBtn {
+    margin: 10px auto 5px;
+    line-height: 42px;
+    width: 110px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .headerRight {
+    display: none;
+  }
+  .mainContents {
+    width: 420px;
+  }
+  .mainContents > p {
+    margin-left: 8px;
+    font-size: 0.9em;
+  }
+  .productImage {
+    height: 84%;
+  }
+  .productContent > p {
+    height: 16%;
+  }
+  .productContent {
+    height: 276px;
+  }
+
+  .appliArticle {
+    font-size: 0.9rem;
+  }
+  .modalContent {
+    width: 66%;
+    padding: 0.7em;
+  }
+  .closeBtn {
+    margin: 5px auto 0;
+    line-height: 40px;
+  }
+
+  .HumbergerMenuIcon {
+    background-color: transparent;
+    border: none;
+    outline: none !important;
+    cursor: pointer;
+    margin-left: auto;
+    display: block;
+    position: relative;
+    z-index: 20;
+  }
+
+  .HumbergerMenuIcon > span {
+    background-color: black;
+    width: 35px;
+    height: 2px;
+    display: block;
+    margin-bottom: 9px;
+    -webkit-transition: -webkit-transform 0.7s;
+    transition: -webkit-transform 0.7s;
+    transition: transform 0.7s;
+    transition: transform 0.7s, -webkit-transform 0.7s;
+  }
+
+  .HumbergerMenuIcon > span:last-child {
+    margin-bottom: 0;
+  }
+
+  .HumbergerMenuIcon.menu-open > span:nth-child(1) {
+    -webkit-transition-delay: 70ms;
+    transition-delay: 70ms;
+    -webkit-transform: translateY(11px) rotate(135deg);
+    transform: translateY(11px) rotate(135deg);
+  }
+
+  .HumbergerMenuIcon.menu-open > span:nth-child(2) {
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+    -webkit-transform: translateX(-18px) scaleX(0);
+    transform: translateX(-18px) scaleX(0);
+  }
+
+  .HumbergerMenuIcon.menu-open > span:nth-child(3) {
+    -webkit-transition-delay: 140ms;
+    transition-delay: 140ms;
+    -webkit-transform: translateY(-11px) rotate(-135deg);
+    transform: translateY(-11px) rotate(-135deg);
+  }
+
+  .HumbergerOverlay {
+    position: fixed;
+    height: 400px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #33bdef;
+    text-align: center;
+    padding: 64px;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: opacity 0.3s ease-in;
+    transition: opacity 0.3s ease-in;
+  }
+
+  .HumbergerOverlay ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .HumbergerOverlay li {
+    text-align: left;
+    width: 250px;
+    border-bottom: 1px solid gray;
+    margin-top: 24px;
+  }
+
+  .HumbergerOverlay li a {
+    padding-left: 1px;
+    color: black;
+    text-decoration: none;
+  }
+
+  .HumbergerOverlay dl {
+    margin: 0;
+  }
+
+  .HumbergerOverlay dl dt {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+  }
+
+  .HumbergerOverlay dl dt::after {
+    content: "+";
+    position: absolute;
+    top: -1px;
+    right: 16px;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+  }
+
+  .HumbergerOverlay dl.appear dt::after {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .HumbergerOverlay dl dd {
+    margin: 0;
+    text-align: left;
+    padding: 8px;
+    display: none;
+  }
+
+  .HumbergerOverlay dl.appear dd {
+    display: block;
+    -webkit-animation: 0.6s fadeIn;
+    animation: 0.6s fadeIn;
+  }
+
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(-10px);
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(-10px);
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+
+  .HumbergerOverlay.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  @media screen and (max-width: 486px) {
+    .headerTitle {
+      font-size: 1.2rem;
+    }
+    .mainContents {
+      width: 350px;
+    }
+    .productContent {
+      height: 240px;
+    }
+    .appliArticle {
+      font-size: 0.8rem;
+    }
+    .linkUrl,
+    .gitLinkUrl {
+      font-size: 0.9rem;
+    }
+    .closeBtn {
+      line-height: 32px;
+      width: 96px;
+    }
+    .modalContent {
+      width: 72%;
+    }
+  }
+  @media screen and (max-width: 380px) {
+    .headerTitle {
+      font-size: 1rem;
+    }
+    .mainContents {
+      width: 270px;
+    }
+    .mainContents > p {
+      font-size: 0.8em;
+    }
+    .productContent {
+      height: 196px;
+    }
+    .productContent > p {
+      font-size: 1rem;
+    }
+    .modalContent{
+      width:66%;
+    }
+  }
 }

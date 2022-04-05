@@ -1,19 +1,16 @@
 import React from "react";
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Page1 from "../../screens/Page1";
 import Page2 from "../../screens/Page2";
 import Page3 from "../../screens/Page3";
+import { Humberger } from "../header/Humberger";
 
 export default function Header() {
   return (
     <>
       <div className="header">
         <h1 className="headerTitle">Kitaharaのポートフォリオサイト</h1>
-        <div className="headerRight">
-          <Link to="/">home</Link>
-          <Link to="/page2">製作物紹介</Link>
-          <Link to="/page3">Page3</Link>
-        </div>
+        <Humberger />
       </div>
       <Routes>
         <Route path="/" element={<Page1 />} />
