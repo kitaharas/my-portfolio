@@ -2,13 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export function useAxiosGetData(initialUrl) {
-  const [data, setData] = useState([]);
+  const [value, setValue] = useState([]);
   useEffect(() => {
-    axios.get(initialUrl, { responseType: "blob" }).then((res) => {
-      setData([URL.createObjectURL(res.data)]);
+    axios.get(initialUrl).then((res) => {
+      setValue(res.data);
     });
   }, [initialUrl]);
-  return { data };
+  return { value };
 }
 
 export function modalreducer(state, action) {
@@ -47,7 +47,9 @@ export function modalreducer(state, action) {
           simpletrello: false,
         };
       }
+    // eslint-disable-next-line no-fallthrough
     default:
       return state;
+      
   }
 }

@@ -1,14 +1,14 @@
-import React from 'react'
+import React from "react";
 import { useAxiosGetData } from "../components/services/useCustomState";
 
-const initialUrl = "https://logos-download.com/wp-content/uploads/2016/09/React_logo_wordmark.png";
+const initialUrl = "https://api.chucknorris.io/jokes/random";
 
-export default function Page3() {
-  const { data: data} = useAxiosGetData(initialUrl);
-  
+export default function JokeCategory() {
+  const { value: data } = useAxiosGetData(initialUrl);
+
   return (
-    <div className="mainContents">
-      
+    <div className="container3">
+      <h1>{data.value}</h1>
     </div>
-  )
+  );
 }
