@@ -275,6 +275,9 @@ p {
 }
 
 @media screen and (max-width: 650px) {
+  .header{
+    display: block
+  }
   .headerRight {
     display: none;
   }
@@ -307,161 +310,78 @@ p {
     line-height: 40px;
   }
 
-  .HumbergerMenuIcon {
-    background-color: transparent;
-    border: none;
-    outline: none !important;
-    cursor: pointer;
-    margin-left: auto;
-    display: block;
-    position: relative;
-    z-index: 20;
-  }
+  /* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 30px;
+  top: 11px;
+}
 
-  .HumbergerMenuIcon > span {
-    background-color: black;
-    width: 35px;
-    height: 2px;
-    display: block;
-    margin-bottom: 9px;
-    -webkit-transition: -webkit-transform 0.7s;
-    transition: -webkit-transform 0.7s;
-    transition: transform 0.7s;
-    transition: transform 0.7s, -webkit-transform 0.7s;
-  }
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #e6e6e6;
+}
 
-  .HumbergerMenuIcon > span:last-child {
-    margin-bottom: 0;
-  }
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #005b99;
+}
 
-  .HumbergerMenuIcon.menu-open > span:nth-child(1) {
-    -webkit-transition-delay: 70ms;
-    transition-delay: 70ms;
-    -webkit-transform: translateY(11px) rotate(135deg);
-    transform: translateY(11px) rotate(135deg);
-  }
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
 
-  .HumbergerMenuIcon.menu-open > span:nth-child(2) {
-    -webkit-transition-delay: 0s;
-    transition-delay: 0s;
-    -webkit-transform: translateX(-18px) scaleX(0);
-    transform: translateX(-18px) scaleX(0);
-  }
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
 
-  .HumbergerMenuIcon.menu-open > span:nth-child(3) {
-    -webkit-transition-delay: 140ms;
-    transition-delay: 140ms;
-    -webkit-transform: translateY(-11px) rotate(-135deg);
-    transform: translateY(-11px) rotate(-135deg);
-  }
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  top: 0;
+  right:0;
+  height: 100%;
+}
 
-  .HumbergerOverlay {
-    position: fixed;
-    height: 400px;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background: #33bdef;
-    text-align: center;
-    padding: 64px;
-    opacity: 0;
-    pointer-events: none;
-    -webkit-transition: opacity 0.3s ease-in;
-    transition: opacity 0.3s ease-in;
-  }
+/* General sidebar styles */
+.bm-menu {
+  background: white;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
 
-  .HumbergerOverlay ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
 
-  .HumbergerOverlay li {
-    text-align: left;
-    width: 250px;
-    border-bottom: 1px solid gray;
-    margin-top: 24px;
-  }
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
 
-  .HumbergerOverlay li a {
-    padding-left: 1px;
-    color: black;
-    text-decoration: none;
-  }
+/* Individual item */
+.bm-item {
+  display: inline-block;
+  text-decoration: none;
+  outline: none;
+}
 
-  .HumbergerOverlay dl {
-    margin: 0;
-  }
-
-  .HumbergerOverlay dl dt {
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    position: relative;
-  }
-
-  .HumbergerOverlay dl dt::after {
-    content: "+";
-    position: absolute;
-    top: -1px;
-    right: 16px;
-    -webkit-transition: -webkit-transform 0.3s;
-    transition: -webkit-transform 0.3s;
-    transition: transform 0.3s;
-    transition: transform 0.3s, -webkit-transform 0.3s;
-  }
-
-  .HumbergerOverlay dl.appear dt::after {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
-
-  .HumbergerOverlay dl dd {
-    margin: 0;
-    text-align: left;
-    padding: 8px;
-    display: none;
-  }
-
-  .HumbergerOverlay dl.appear dd {
-    display: block;
-    -webkit-animation: 0.6s fadeIn;
-    animation: 0.6s fadeIn;
-  }
-
-  @-webkit-keyframes fadeIn {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(-10px);
-      transform: translateY(-10px);
-    }
-    100% {
-      opacity: 1;
-      -webkit-transform: none;
-      transform: none;
-    }
-  }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(-10px);
-      transform: translateY(-10px);
-    }
-    100% {
-      opacity: 1;
-      -webkit-transform: none;
-      transform: none;
-    }
-  }
-
-  .HumbergerOverlay.show {
-    opacity: 1;
-    pointer-events: auto;
-  }
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+}
 
   @media screen and (max-width: 486px) {
     .headerTitle {

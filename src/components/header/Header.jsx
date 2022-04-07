@@ -3,14 +3,14 @@ import { Route, Routes } from "react-router-dom";
 import Page1 from "../../screens/Page1";
 import Page2 from "../../screens/Page2";
 import Page3 from "../../screens/Page3";
-import { Humberger } from "../header/Humberger";
+import Menu from "./Menu";
 
 export default function Header() {
   return (
     <>
       <div className="header">
         <h1 className="headerTitle">Kitaharaのポートフォリオサイト</h1>
-        <Humberger />
+        <Menu width={250}/>
       </div>
       <Routes>
         <Route path="/" element={<Page1 />} />

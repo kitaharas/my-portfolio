@@ -5,7 +5,7 @@ const Modal = (props) => {
     <>
       <div className="overlay">
         <div className="modalContent">
-          <img src={props.image} className="modalThumbnail" />
+          <img src={props.image} className="modalThumbnail" alt="サービス画面"/>
           <p className="appliArticle">{props.content}</p>
           <div className="modalLinkGroup">
             <a
